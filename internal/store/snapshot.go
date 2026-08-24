@@ -80,6 +80,9 @@ type CastSnapshot struct {
 
 func CloneCastSnapshot(s CastSnapshot) CastSnapshot {
 	out := CastSnapshot{Tower: s.Tower}
-	out.Segments = s.Segments
+	if len(s.Segments) > 0 {
+		out.Segments = make([]SegmentSnapshot, len(s.Segments))
+		copy(out.Segments, s.Segments)
+	}
 	return out
 }
