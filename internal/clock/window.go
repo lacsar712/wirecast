@@ -19,7 +19,7 @@ func NewSolidWindow(clk Clock, duration time.Duration) *SolidWindow {
 }
 
 func (w *SolidWindow) Active(anchor time.Time) bool {
-	return time.Since(anchor) < w.duration
+	return w.clk.Now().Sub(anchor) < w.duration
 }
 
 func (w *SolidWindow) Require(anchor time.Time) error {
