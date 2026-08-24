@@ -16,7 +16,7 @@ func (a *App) ValidateShellDrift(ctx context.Context, moistPct float64) error {
 	if moistPct <= limit {
 		return nil
 	}
-	return fmt.Errorf("moisture: %v", model.ErrShellDrift)
+	return fmt.Errorf("moisture: %w", model.ErrShellDrift)
 }
 
 func (a *App) ConfirmSolidHold(ctx context.Context, anchor time.Time) error {
