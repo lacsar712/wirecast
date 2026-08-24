@@ -16,7 +16,7 @@ func (a *App) ExecutePlan(ctx context.Context, plan SegmentPlan) error {
 	if a.scheduler == nil {
 		return nil
 	}
-	return a.scheduler.InstallVentPlanCtx(context.Background(), clock.VentPlan{VentSteps: plan.VentSteps}, "segment-plan")
+	return a.scheduler.InstallVentPlanCtx(ctx, clock.VentPlan{VentSteps: plan.VentSteps}, "segment-plan")
 }
 
 func (a *App) SegmentVentStepsDone() int {
