@@ -1,6 +1,6 @@
 # wirecast
 
-Continuous casting mold cooling process control.
+wirecast 是一套连铸结晶器冷却工业过程控制系统，用于冷却回路监测、调节与过程联锁。
 
 ## Requirements
 
